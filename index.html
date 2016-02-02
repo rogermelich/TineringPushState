@@ -13,10 +13,25 @@
 
         var Mymodule = (function () {
             var stateObj = { foo: "bar" };
-            history.pushState(stateObj, "bar", "bar.html");
-            var stateObj1 = { foo: "bar2" };
-            history.pushState(stateObj1, "bar2", "bar2.html");
+            var privateMethod = function () {
+                console.log('privateMethod');
+            }
+            return {
+                myPublishProperty: "PropietatPublica",
+                publicMethodOne: function () {
+                    console.log('publicMethodOne')
+                },
+                publicMethodTwo: function () {
+                    console.log('publicMethodTwo')
+                }
+            };
+            console.debug('startObj');
         }());
+
+        console.debug(Mymodule.startObj);
+        console.debug(Mymodule.myPublishProperty);
+        console.debug(Mymodule.publicMethodOne());
+        console.debug(Mymodule.publicMethodTwo());
     </script>
 </body>
 </html>

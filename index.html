@@ -11,13 +11,12 @@
     <script>
         "use strict";
 
-        (function () {
+        var Mymodule = (function () {
             var stateObj = { foo: "bar" };
             history.pushState(stateObj, "bar", "bar.html");
             var stateObj1 = { foo: "bar2" };
             history.pushState(stateObj1, "bar2", "bar2.html");
         }());
     </script>
-
 </body>
 </html>
